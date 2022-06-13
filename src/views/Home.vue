@@ -8,9 +8,9 @@
 import HabitHub from '@/components/HabitHub.vue';
 
 export default {
-  name: 'HabitHub',
+  name: 'Home',
   components: {
     HabitHub,
-  }
-}
+  },
+};
 </script>

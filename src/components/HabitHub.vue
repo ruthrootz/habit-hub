@@ -1,15 +1,15 @@
 <template>
   <div class="hello">
-    
+    TESTING TESTING    
   </div>
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator';
+import { Vue, Component } from 'vue-property-decorator';
 
 @Component
 export default class HabitHub extends Vue {
-  @Prop() private gridState!: number[][];
+  private gridState!: number[][];
 }
 </script>
 
