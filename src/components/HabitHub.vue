@@ -9,7 +9,20 @@ import { Vue, Component } from 'vue-property-decorator';
 
 @Component
 export default class HabitHub extends Vue {
-  private gridState!: number[][];
+  private gridState!: number[][] = [
+    [0],[0],[0],[0],[0],[0],[0],[0],[0],[0],
+    [0],[0],[0],[0],[0],[0],[0],[0],[0],[0],
+    [0],[0],[0],[0],[0],[0],[0],[0],[0],[0],
+    [0],[0],[0],[0],[0],[0],[0],[0],[0],[0],
+    [0],[0],[0],[0],[0],[0],[0],[0],[0],[0],
+    [0],[0],[0],[0],[0],[0],[0],[0],[0],[0],
+    [0],[0],[0],[0],[0],[0],[0],[0],[0],[0],
+  ];
+
+  private const ZERO = 0;
+  private const ONE = 1;
+  private const TWO = 2;
+
 }
 </script>
 
