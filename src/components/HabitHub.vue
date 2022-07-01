@@ -1,6 +1,10 @@
 <template>
   <div class="hello">
-    TESTING TESTING    
+    <b-container fluid>
+      <b-col v-for="column in COLUMNS" :key="column">
+        <b-row v-for="row in ROWS" :key="row">TEST CELL</b-row>
+      </b-col>
+    </b-container>
   </div>
 </template>
 
@@ -9,20 +13,84 @@ import { Vue, Component } from 'vue-property-decorator';
 
 @Component
 export default class HabitHub extends Vue {
-  private gridState!: number[][] = [
-    [0],[0],[0],[0],[0],[0],[0],[0],[0],[0],
-    [0],[0],[0],[0],[0],[0],[0],[0],[0],[0],
-    [0],[0],[0],[0],[0],[0],[0],[0],[0],[0],
-    [0],[0],[0],[0],[0],[0],[0],[0],[0],[0],
-    [0],[0],[0],[0],[0],[0],[0],[0],[0],[0],
-    [0],[0],[0],[0],[0],[0],[0],[0],[0],[0],
-    [0],[0],[0],[0],[0],[0],[0],[0],[0],[0],
+  private gridState: number[][] = [
+    [0],
+    [0],
+    [0],
+    [0],
+    [0],
+    [0],
+    [0],
+    [0],
+    [0],
+    [0],
+    [0],
+    [0],
+    [0],
+    [0],
+    [0],
+    [0],
+    [0],
+    [0],
+    [0],
+    [0],
+    [0],
+    [0],
+    [0],
+    [0],
+    [0],
+    [0],
+    [0],
+    [0],
+    [0],
+    [0],
+    [0],
+    [0],
+    [0],
+    [0],
+    [0],
+    [0],
+    [0],
+    [0],
+    [0],
+    [0],
+    [0],
+    [0],
+    [0],
+    [0],
+    [0],
+    [0],
+    [0],
+    [0],
+    [0],
+    [0],
+    [0],
+    [0],
+    [0],
+    [0],
+    [0],
+    [0],
+    [0],
+    [0],
+    [0],
+    [0],
+    [0],
+    [0],
+    [0],
+    [0],
+    [0],
+    [0],
+    [0],
+    [0],
+    [0],
+    [0],
   ];
 
-  private const ZERO = 0;
-  private const ONE = 1;
-  private const TWO = 2;
-
+  private COLUMNS = 10;
+  private ROWS = 7;
+  private ZERO = 0;
+  private ONE = 1;
+  private TWO = 2;
 }
 </script>
 
@@ -42,4 +110,3 @@ a {
   color: #42b983;
 }
 </style>
-
