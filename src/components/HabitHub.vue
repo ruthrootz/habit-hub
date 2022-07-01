@@ -1,9 +1,13 @@
 <template>
   <div class="hello">
     <b-container fluid>
-      <b-col v-for="column in COLUMNS" :key="column">
-        <b-row v-for="row in ROWS" :key="row">TEST CELL</b-row>
-      </b-col>
+      <b-row class="text-center" v-for="row in ROWS" :key="row">
+        <b-col v-for="column in COLUMNS" :key="column">
+          <span class="cell">
+            CELL
+          </span>
+        </b-col>
+      </b-row>
     </b-container>
   </div>
 </template>
@@ -108,5 +112,17 @@ li {
 }
 a {
   color: #42b983;
+}
+.hello {
+  padding-top: 20%;
+}
+b-row {
+  display: block;
+  margin: 10px;
+  height: 50px;
+}
+.cell {
+  outline: #42b983 solid 1px;
+  margin: 1%;
 }
 </style>
