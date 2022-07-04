@@ -1,9 +1,9 @@
 <template>
-  <div class="hello">
+  <div class="grid">
     <b-container fluid>
       <b-row class="text-center" v-for="row in ROWS" :key="row">
         <b-col v-for="column in COLUMNS" :key="column">
-          <span class="cell" :class="getCellColor(row, column)"></span>
+          <div class="cell" :class="getCellColor(row, column)"></div>
         </b-col>
       </b-row>
     </b-container>
@@ -17,11 +17,11 @@ import { Vue, Component } from 'vue-property-decorator';
 export default class HabitHub extends Vue {
   private gridState: number[][] = [
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 2, 0, 0],
+    [0, 0, 0, 1, 0, 0, 0, 2, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 1, 0, 1, 0, 0],
+    [0, 0, 0, 1, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
   ];
 
@@ -34,9 +34,9 @@ export default class HabitHub extends Vue {
   private getCellColor(row: number, column: number): string {
     return this.gridState[row - 1][column - 1] === this.ZERO
       ? 'cell-zero'
-      : this.gridState[row][column] === this.ONE
+      : this.gridState[row - 1][column - 1] === this.ONE
       ? 'cell-one'
-      : this.gridState[row][column] === this.TWO
+      : this.gridState[row - 1][column - 1] === this.TWO
       ? 'cell-two'
       : '';
   }
@@ -44,31 +44,13 @@ export default class HabitHub extends Vue {
 </script>
 
 <style scoped>
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
-b-row {
-  display: block;
-  margin: 10px;
-  height: 50px;
-}
-.hello {
-  padding-top: 20%;
+.grid {
+  padding-top: 25%;
 }
 .cell {
-  outline: #42b983 solid 1px;
-  margin: 1%;
+  width: 25px;
+  height: 25px;
+  margin: 5%;
 }
 .cell-zero {
   background-color: #42b983;

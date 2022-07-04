@@ -10,7 +10,7 @@
 
 <style>
 body {
-  background-color: #04050D;
+  background-color: #04050D !important;
 }
 
 #app {
