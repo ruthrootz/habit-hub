@@ -3,9 +3,7 @@
     <b-container fluid>
       <b-row class="text-center" v-for="row in ROWS" :key="row">
         <b-col v-for="column in COLUMNS" :key="column">
-          <span class="cell">
-            CELL
-          </span>
+          <span class="cell" :class="`${getCellColorClass(row, column)}`"></span>
         </b-col>
       </b-row>
     </b-container>
@@ -18,76 +16,13 @@ import { Vue, Component } from 'vue-property-decorator';
 @Component
 export default class HabitHub extends Vue {
   private gridState: number[][] = [
-    [0],
-    [0],
-    [0],
-    [0],
-    [0],
-    [0],
-    [0],
-    [0],
-    [0],
-    [0],
-    [0],
-    [0],
-    [0],
-    [0],
-    [0],
-    [0],
-    [0],
-    [0],
-    [0],
-    [0],
-    [0],
-    [0],
-    [0],
-    [0],
-    [0],
-    [0],
-    [0],
-    [0],
-    [0],
-    [0],
-    [0],
-    [0],
-    [0],
-    [0],
-    [0],
-    [0],
-    [0],
-    [0],
-    [0],
-    [0],
-    [0],
-    [0],
-    [0],
-    [0],
-    [0],
-    [0],
-    [0],
-    [0],
-    [0],
-    [0],
-    [0],
-    [0],
-    [0],
-    [0],
-    [0],
-    [0],
-    [0],
-    [0],
-    [0],
-    [0],
-    [0],
-    [0],
-    [0],
-    [0],
-    [0],
-    [0],
-    [0],
-    [0],
-    [0],
-    [0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
   ];
 
   private COLUMNS = 10;
@@ -95,6 +30,16 @@ export default class HabitHub extends Vue {
   private ZERO = 0;
   private ONE = 1;
   private TWO = 2;
+
+  private getCellColorClass(row: number, column: number): string {
+    return this.gridState[row][column] === this.ZERO
+      ? 'cell-zero'
+      : this.gridState[row][column] === this.ONE
+      ? 'cell-one'
+      : this.gridState[row][column] === this.TWO
+      ? 'cell-two'
+      : '';
+  }
 }
 </script>
 
@@ -113,16 +58,25 @@ li {
 a {
   color: #42b983;
 }
-.hello {
-  padding-top: 20%;
-}
 b-row {
   display: block;
   margin: 10px;
   height: 50px;
 }
+.hello {
+  padding-top: 20%;
+}
 .cell {
   outline: #42b983 solid 1px;
   margin: 1%;
+}
+.cell-zero {
+  background-color: #42b983;
+}
+.cell-one {
+  background-color: #f1c40f;
+}
+.cell-two {
+  background-color: #e74c3c;
 }
 </style>
