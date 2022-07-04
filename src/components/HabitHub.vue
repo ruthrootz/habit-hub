@@ -3,7 +3,7 @@
     <b-container fluid>
       <b-row class="text-center" v-for="row in ROWS" :key="row">
         <b-col v-for="column in COLUMNS" :key="column">
-          <span class="cell" :class="`${getCellColorClass(row, column)}`"></span>
+          <span class="cell" :class="getCellColor(row, column)"></span>
         </b-col>
       </b-row>
     </b-container>
@@ -31,8 +31,8 @@ export default class HabitHub extends Vue {
   private ONE = 1;
   private TWO = 2;
 
-  private getCellColorClass(row: number, column: number): string {
-    return this.gridState[row][column] === this.ZERO
+  private getCellColor(row: number, column: number): string {
+    return this.gridState[row - 1][column - 1] === this.ZERO
       ? 'cell-zero'
       : this.gridState[row][column] === this.ONE
       ? 'cell-one'
