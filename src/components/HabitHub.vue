@@ -1,6 +1,6 @@
 <template>
   <div class="grid">
-    <b-container>
+    <b-container class="d-flex justify-content-center">
       <b-row class="text-center" v-for="row in ROWS" :key="row">
         <b-col v-for="column in COLUMNS" :key="column">
           <div class="cell" :class="getCellColor(row, column)"></div>
