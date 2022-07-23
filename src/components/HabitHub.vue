@@ -1,7 +1,7 @@
 <template>
   <div class="grid">
-    <b-container class="d-flex justify-content-center">
-      <b-row class="text-center" v-for="row in ROWS" :key="row">
+    <b-container class="d-flex">
+      <b-row v-for="row in ROWS" :key="row">
         <b-col v-for="column in COLUMNS" :key="column">
           <div class="cell" :class="getCellColor(row, column)"></div>
         </b-col>
@@ -51,9 +51,9 @@ export default class HabitHub extends Vue {
   padding-top: 5%;
 }
 .cell {
-  width: 40px;
-  height: 40px;
-  margin: 25%;
+  width: 45px;
+  height: 45px;
+  margin: 20%;
 }
 .cell-zero {
   background-color: rgb(193, 222, 210);

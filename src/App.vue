@@ -11,7 +11,7 @@
 <style>
 body {
   background-color: #04050D !important;
-  width: 50%;
+  
 }
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -19,5 +19,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #C8D1D8;
+  width: 75%;
+  margin: 0 auto;
 }
 </style>
