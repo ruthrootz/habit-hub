@@ -11,7 +11,7 @@
       </b-row>
     </b-container>
     <b-button-group>
-      <b-button variant="primary" @click="resetGrid()">reset grid</b-button>
+      <b-button class="m-3" variant="primary" @click="resetGrid()">reset grid</b-button>
     </b-button-group>
   </div>
 </template>
@@ -66,7 +66,7 @@ export default class HabitHub extends Vue {
 
   private setCellColor(row: number, column: number) {
     const newRow = this.gridState[row - 1].slice(0);
-    newRow[column - 1] = (this.gridState[row - 1][column - 1] + 1) % 3;
+    newRow[column - 1] = (this.gridState[row - 1][column - 1] + 1) % 4;
     this.$set(this.gridState, row - 1, newRow);
   }
 
@@ -89,10 +89,10 @@ export default class HabitHub extends Vue {
 
 <style scoped>
 .grid {
-  padding-top: 7%;
+  padding-top: 5%;
 }
 .cell {
-  border: 1px solid #09864e;
+  border: 1px solid #aab1ae;
   border-radius: 10%;
   width: 45px;
   height: 45px;
@@ -102,12 +102,12 @@ export default class HabitHub extends Vue {
   background-color: #000000;
 }
 .cell-one {
-  background-color: #b1e8d1;
+  background-color: #93ddbb;
 }
 .cell-two {
-  background-color: #40b882;
+  background-color: #00d478;
 }
 .cell-three {
-  background-color: #09864e;
+  background-color: #057a47;
 }
 </style>
