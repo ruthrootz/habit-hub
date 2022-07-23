@@ -3,7 +3,16 @@
     <b-container class="d-flex">
       <b-row v-for="row in ROWS" :key="row">
         <b-col v-for="column in COLUMNS" :key="column">
-          <div class="cell" :class="getCellColor(row, column)"></div>
+          <div class="cell"
+               :class="gridState[row - 1][column - 1] === ZERO
+                      ? 'cell-zero'
+                      : gridState[row - 1][column - 1] === ONE
+                      ? 'cell-one'
+                      : gridState[row - 1][column - 1] === TWO
+                      ? 'cell-two'
+                      : ''"
+               @click="setCellColor(row, column)">
+          </div>
         </b-col>
       </b-row>
     </b-container>
@@ -43,6 +52,12 @@ export default class HabitHub extends Vue {
       ? 'cell-two'
       : '';
   }
+
+  private setCellColor(row: number, column: number) {
+    console.log(this.gridState[row - 1][column - 1]);
+    this.gridState[row - 1][column - 1] = (this.gridState[row - 1][column - 1] + 1) % 3;
+  }
+
 }
 </script>
 
