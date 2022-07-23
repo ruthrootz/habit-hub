@@ -23,9 +23,9 @@ export default class HabitHub extends Vue {
     [0, 0, 0, 0, 0, 1, 0],
     [0, 0, 0, 1, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 1, 0, 0, 0, 0],
+    [0, 0, 2, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 2],
   ];
 
   private COLUMNS = 7;
@@ -56,12 +56,12 @@ export default class HabitHub extends Vue {
   margin: 25%;
 }
 .cell-zero {
-  background-color: #42b983;
+  background-color: rgb(193, 222, 210);
 }
 .cell-one {
-  background-color: #f1c40f;
+  background-color: #40b882;
 }
 .cell-two {
-  background-color: #e74c3c;
+  background-color: #09864e;
 }
 </style>
