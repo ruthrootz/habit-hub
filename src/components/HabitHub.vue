@@ -4,7 +4,7 @@
       <b-row v-for="row in ROWS" :key="row">
         <b-col v-for="column in COLUMNS" :key="column">
           <div class="cell"
-               :class="{ 'cell-zero': gridState[row - 1][column - 1] === 0, 'cell-one': gridState[row - 1][column - 1] === 1, 'cell-two': gridState[row - 1][column - 1] === 2, 'cell-three': gridState[row - 1][column - 1] === 3 }"
+               :class="getCellColor(row, column)"
                @click="setCellColor(row, column)">
           </div>
         </b-col>
@@ -51,12 +51,9 @@ export default class HabitHub extends Vue {
   }
 
   private setCellColor(row: number, column: number) {
-    // this.gridState[row - 1][column - 1] = (this.gridState[row - 1][column - 1] + 1) % 3;
-    // this.gridState[row - 1][column - 1] = 10;
-    // console.log(this.gridState[row - 1][column - 1]);
-    const newRow = this.gridState[row - 1].slice(0)
-    newRow[column - 1] = (this.gridState[row - 1][column - 1] + 1) % 3
-    this.$set(this.gridState, row - 1, newRow)
+    const newRow = this.gridState[row - 1].slice(0);
+    newRow[column - 1] = (this.gridState[row - 1][column - 1] + 1) % 3;
+    this.$set(this.gridState, row - 1, newRow);
   }
 }
 </script>
