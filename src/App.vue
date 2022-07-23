@@ -11,6 +11,8 @@
 <style>
 body {
   background-color: #04050D !important;
+  width: 50%;
+  text-align: center;
 }
 
 #app {

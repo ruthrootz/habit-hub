@@ -1,6 +1,6 @@
 <template>
   <div class="grid">
-    <b-container fluid>
+    <b-container>
       <b-row class="text-center" v-for="row in ROWS" :key="row">
         <b-col v-for="column in COLUMNS" :key="column">
           <div class="cell" :class="getCellColor(row, column)"></div>
@@ -16,17 +16,20 @@ import { Vue, Component } from 'vue-property-decorator';
 @Component
 export default class HabitHub extends Vue {
   private gridState: number[][] = [
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 2, 0, 0],
-    [0, 0, 0, 1, 0, 0, 0, 2, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 1, 0, 1, 0, 0],
-    [0, 0, 0, 1, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 1, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 2, 0, 0],
+    [0, 0, 0, 1, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 1, 0],
+    [0, 0, 0, 1, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0],
   ];
 
-  private COLUMNS = 10;
-  private ROWS = 7;
+  private COLUMNS = 7;
+  private ROWS = 10;
   private ZERO = 0;
   private ONE = 1;
   private TWO = 2;
@@ -45,12 +48,12 @@ export default class HabitHub extends Vue {
 
 <style scoped>
 .grid {
-  padding-top: 25%;
+  padding-top: 5%;
 }
 .cell {
-  width: 25px;
-  height: 25px;
-  margin: 5%;
+  width: 40px;
+  height: 40px;
+  margin: 25%;
 }
 .cell-zero {
   background-color: #42b983;
