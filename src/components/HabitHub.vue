@@ -4,13 +4,7 @@
       <b-row v-for="row in ROWS" :key="row">
         <b-col v-for="column in COLUMNS" :key="column">
           <div class="cell"
-               :class="gridState[row - 1][column - 1] === ZERO
-                      ? 'cell-zero'
-                      : gridState[row - 1][column - 1] === ONE
-                      ? 'cell-one'
-                      : gridState[row - 1][column - 1] === TWO
-                      ? 'cell-two'
-                      : ''"
+               :class="getCellColor(row, column)"
                @click="setCellColor(row, column)">
           </div>
         </b-col>
@@ -29,11 +23,11 @@ export default class HabitHub extends Vue {
     [0, 0, 0, 0, 2, 0, 0],
     [0, 0, 0, 1, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 1, 0],
+    [3, 0, 0, 0, 0, 1, 0],
     [0, 0, 0, 1, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0],
     [0, 0, 1, 0, 0, 0, 0],
-    [0, 0, 2, 0, 0, 0, 0],
+    [0, 0, 2, 0, 3, 0, 0],
     [0, 0, 0, 0, 0, 0, 2],
   ];
 
@@ -42,6 +36,7 @@ export default class HabitHub extends Vue {
   private ZERO = 0;
   private ONE = 1;
   private TWO = 2;
+  private THREE = 3;
 
   private getCellColor(row: number, column: number): string {
     return this.gridState[row - 1][column - 1] === this.ZERO
@@ -50,6 +45,8 @@ export default class HabitHub extends Vue {
       ? 'cell-one'
       : this.gridState[row - 1][column - 1] === this.TWO
       ? 'cell-two'
+      : this.gridState[row - 1][column - 1] === this.THREE
+      ? 'cell-three'
       : '';
   }
 
@@ -57,26 +54,30 @@ export default class HabitHub extends Vue {
     console.log(this.gridState[row - 1][column - 1]);
     this.gridState[row - 1][column - 1] = (this.gridState[row - 1][column - 1] + 1) % 3;
   }
-
 }
 </script>
 
 <style scoped>
 .grid {
-  padding-top: 5%;
+  padding-top: 7%;
 }
 .cell {
+  border: 1px solid #09864e;
+  border-radius: 10%;
   width: 45px;
   height: 45px;
   margin: 20%;
 }
 .cell-zero {
-  background-color: rgb(193, 222, 210);
+  background-color: #000000;
 }
 .cell-one {
-  background-color: #40b882;
+  background-color: #b1e8d1;
 }
 .cell-two {
+  background-color: #40b882;
+}
+.cell-three {
   background-color: #09864e;
 }
 </style>
