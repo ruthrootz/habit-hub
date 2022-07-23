@@ -14,7 +14,7 @@
 </template>
 
 <script lang="ts">
-import { Vue, Component } from 'vue-property-decorator';
+import { Vue, Component, Watch } from 'vue-property-decorator';
 
 @Component
 export default class HabitHub extends Vue {
@@ -37,6 +37,17 @@ export default class HabitHub extends Vue {
   private ONE = 1;
   private TWO = 2;
   private THREE = 3;
+
+  @Watch('gridState')
+  private onGridStateChanged() {
+    localStorage.setItem('gridState', JSON.stringify(this.gridState));
+  }
+
+  private mounted(): void {
+    if (localStorage.gridState) {
+      this.gridState = JSON.parse(localStorage.getItem('gridState') as string);
+    }
+  }
 
   private getCellColor(row: number, column: number): string {
     return this.gridState[row - 1][column - 1] === this.ZERO
