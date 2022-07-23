@@ -11,7 +11,7 @@
       </b-row>
     </b-container>
     <b-button-group>
-      <b-button variant="primary" @click="resetGrid()">Reset</b-button>
+      <b-button variant="primary" @click="resetGrid()">reset grid</b-button>
     </b-button-group>
   </div>
 </template>
