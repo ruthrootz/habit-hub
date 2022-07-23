@@ -1,5 +1,18 @@
 <template>
   <div class="grid">
+    <b-container>
+      <b-row>
+        <b-col cols="3">
+          <label for="habit-goal">I AM GOING TO </label>
+        </b-col>
+        <b-col cols="6">
+          <b-form-input id="habit-goal"></b-form-input>
+        </b-col>
+        <b-col cols="3">
+          <label for="habit-goal"> EVERY DAY</label>
+        </b-col>
+      </b-row>
+    </b-container>
     <b-container class="d-flex">
       <b-row v-for="row in ROWS" :key="row">
         <b-col v-for="column in COLUMNS" :key="column">
@@ -11,7 +24,7 @@
       </b-row>
     </b-container>
     <b-button-group>
-      <b-button class="m-3" variant="primary" @click="resetGrid()">reset grid</b-button>
+      <b-button class="m-1" variant="primary" @click="resetGrid()">reset grid</b-button>
     </b-button-group>
   </div>
 </template>
