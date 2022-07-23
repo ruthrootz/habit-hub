@@ -11,7 +11,6 @@
 <style>
 body {
   background-color: #04050D !important;
-  
 }
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;

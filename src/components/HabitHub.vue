@@ -10,6 +10,9 @@
         </b-col>
       </b-row>
     </b-container>
+    <b-button-group>
+      <b-button variant="primary" @click="resetGrid()">Reset</b-button>
+    </b-button-group>
   </div>
 </template>
 
@@ -65,6 +68,21 @@ export default class HabitHub extends Vue {
     const newRow = this.gridState[row - 1].slice(0);
     newRow[column - 1] = (this.gridState[row - 1][column - 1] + 1) % 3;
     this.$set(this.gridState, row - 1, newRow);
+  }
+
+  private resetGrid(): void {
+    this.gridState = [
+      [0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0],
+    ];
   }
 }
 </script>
