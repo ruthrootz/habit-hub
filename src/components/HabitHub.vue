@@ -3,13 +3,13 @@
     <b-container>
       <b-row>
         <b-col cols="3">
-          <label for="goal-text">I AM GOING TO </label>
+          <label for="goal-text">I AM GOING TO</label>
         </b-col>
         <b-col cols="6">
           <b-form-input id="goal-text"></b-form-input>
         </b-col>
         <b-col cols="3">
-          <label for="goal-text"> EVERY DAY</label>
+          <label for="goal-text">EVERY DAY</label>
         </b-col>
       </b-row>
     </b-container>
