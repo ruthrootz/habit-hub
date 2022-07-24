@@ -105,7 +105,7 @@ export default class HabitHub extends Vue {
   padding-top: 5%;
 }
 .cell {
-  border: 1px solid #aab1ae;
+  border: 1px solid #93ddbb;
   border-radius: 10%;
   width: 45px;
   height: 45px;
